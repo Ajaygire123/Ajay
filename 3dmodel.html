@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Image Gallery</title>
+    <style>body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.gallery-container {
+  position: relative;
+}
+
+.gallery-image {
+    width: 144px;
+    height: 241px;
+    cursor: pointer;
+    background-color: transparent;
+}
+</style>
+</head>
+
+<body>
+    <div class="gallery-container">
+        <img src="C:\Users\pc\OneDrive\Desktop\demojavascript\1702800334695.jpg" alt="Image 1" class="gallery-image"
+            onmouseover="openImage()" onmouseout="closeImage()">
+        <img src="C:\Users\pc\OneDrive\Desktop\demojavascript\1702800186901.jpg" alt="Image 2" class="gallery-image"
+            style="display: none;">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+<script>
+    let currentImageIndex = 0;
+    const images = document.querySelectorAll('.gallery-image');
+
+    function openImage() {
+        // Display the second image when the mouse is over the first image
+        images[currentImageIndex].style.display = 'none';
+        currentImageIndex = 1; // Index of the second image
+        images[currentImageIndex].style.display = 'block';
+    }
+
+    function closeImage() {
+        // Display the first image when the mouse is out
+        images[currentImageIndex].style.display = 'none';
+        currentImageIndex = 0; // Index of the first image
+        images[currentImageIndex].style.display = 'block';
+    }
+</script>
+
+
+
+</html>
